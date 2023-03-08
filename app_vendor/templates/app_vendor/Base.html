@@ -11,7 +11,7 @@
         
 
         <!-- Bootstrap core CSS -->
-        <link href="{% static 'SocialTravel/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'app_vendor/css/bootstrap.min.css' %}" rel="stylesheet">
 
         <!-- Favicons -->
         <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -38,9 +38,10 @@
             }
         }
         </style>
-
+        {%block style%} {%endblock%}
         <!-- Custom styles for this template -->
-        <link href="{% static 'SocialTravel/css/carousel.css' %}" rel="stylesheet">
+        <link href="{% static 'app_vendor/css/carousel.css' %}" rel="stylesheet">
+        {%block links %} {%endblock%}
     </head>
     <body>
         <!-- CABECERA -->    
@@ -63,7 +64,7 @@
                                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                             </li>
                         </ul>
-                        <form action="{% url 'buscar_post' %}" class="d-flex">
+                        <form action="" class="d-flex">
                             <input class="form-control me-2" name="criterio" type="search" placeholder="Post title" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
@@ -87,5 +88,7 @@
 
 
         <script src="{% static 'SocialTravel/js/bootstrap.bundle.min.js' %}"></script>
+
+        {% block scripts %}{% endblock %}
     </body>
 </html>
