@@ -1,0 +1,30 @@
+{% extends "vendor/base.html" %}
+{% load static %}
+
+{% block main %}
+<div class="container mt-3">
+    <h2>Add Product</h2>
+    <form action="{% url 'add_product' %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3 mt-3">
+            <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+            <div>{{ form.name }}</div>
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.description.id_for_label }}">{{ form.description.label }}</label>
+            <div>{{ form.description }}</div>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="{{ form.price.id_for_label }}">{{ form.price.label }}</label>
+            <div>{{ form.price }}</div>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="{{ form.stock.id_for_label }}">{{ form.stock.label }}</label>
+            <div>{{ form.stock }}</div>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Add">
+    </form>
+  </div>
+
+<a href="{% url 'products' %}" class="d-flex justify-content-center mt-3"><button type="button" class="btn btn-outline-success">Back to products</button></a>
+{% endblock %}

@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Document{% endblock %}</title>
 
-    <!-- Bootstrap core CSS -->
+    {% block bootstrap %}
     <link href="{% static 'vendor/css/bootstrap.min.css' %}" rel="stylesheet">
+    {% endblock %}
 
     {% block favicons %}
     <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -59,7 +60,7 @@
         {%endblock%}
     </footer>
     
-    {% block scripts %}
+    {% block javascript %}
     <script src="{% static 'SocialTravel/js/bootstrap.bundle.min.js' %}"></script>
     {% endblock %}
 </body>
