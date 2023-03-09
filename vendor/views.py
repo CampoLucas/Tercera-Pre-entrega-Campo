@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from vendor.models import Product, ProductOrder, Store
-from vendor.forms import ProductForm, ProductOrderForm, StoreForm
+from vendor.models import Product, Order, Store
+from vendor.forms import ProductForm, OrderForm, StoreForm
 
 def home(request):
     return render(request, "vendor/home.html")
@@ -22,16 +22,16 @@ def add_product(request):
 
 def show_orders(request):
     context = {
-        "orders": ProductOrder.objects.all(), 
+        "orders": Order.objects.all(), 
     }
     return render(request, "vendor/orders.html", context)
 
 def add_order(request):
     if request.POST:
-        order_form = ProductOrderForm(request.POST)
+        order_form = OrderForm(request.POST)
         order_form.save()
     context = {
-        "form": ProductOrderForm(),
+        "form": OrderForm(),
     }
     return render(request, "vendor/order_form.html", context)
 

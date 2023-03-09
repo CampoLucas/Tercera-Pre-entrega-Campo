@@ -1,14 +1,14 @@
 from django import forms
-from vendor.models import Product, ProductOrder, Store
+from vendor.models import Product, Order, Store
 
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = '__all__'
 
-class ProductOrderForm(forms.ModelForm):
+class OrderForm(forms.ModelForm):
     class Meta:
-        model = ProductOrder
+        model = Order
         fields = '__all__'
 
 class StoreForm(forms.ModelForm):

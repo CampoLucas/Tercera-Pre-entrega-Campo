@@ -11,7 +11,7 @@ class Product(models.Model):
     stock = models.PositiveBigIntegerField()
     store = models.ForeignKey(Store, on_delete=models.CASCADE, related_name='products', blank=True, null=True)
 
-class ProductOrder(models.Model):
+class Order(models.Model):
     shiping_address = models.TimeField()
     order_date = models.DateTimeField(auto_now_add=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='oredered_product')
