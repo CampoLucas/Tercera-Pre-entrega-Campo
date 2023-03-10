@@ -1,0 +1,37 @@
+{% extends "vendor/base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block bootstrap %}
+    {{ block.super }}
+    
+{% endblock %}
+    
+{% block main %}
+    <div class="container text-center">
+        <h1 class="mt-5">Stores</h1>
+        {% if stores %}
+            <div class="row row-cols-6">
+                <div class="col p-2 border bg-warning border-dark text-primary">ID</div>
+                <div class="col p-2 border bg-warning border-dark text-primary">Store</div>
+                <div class="col p-2 border bg-warning border-dark text-primary">Location</div>
+                {% for store in stores %}
+                    <div class="col p-2 border bg-light border-dark text-dark">{{order.id}}</div>
+                    <div class="col p-2 border bg-light border-dark text-dark">{{order.product}}</div>
+                    <div class="col p-2 border bg-light border-dark text-dark">{{order.shiping_address}}</div>
+                {% endfor %}
+            </div>
+        {% else %}
+        <p class="mt-5">No stores yet.</p>
+        {% endif %}
+        <div class="mt-5">
+            <a href="{% url 'add_store' %}" class="" ><button type="button" class="btn btn-outline-success">Add store!</button></a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    {{ block.super }}
+    
+{% endblock %}

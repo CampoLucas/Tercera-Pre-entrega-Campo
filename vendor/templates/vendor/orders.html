@@ -1,0 +1,43 @@
+{% extends "vendor/base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block bootstrap %}
+    {{ block.super }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-0p8lOfa5ON5Lw+LbxIid5jlzQ5f5gfBb7oXbKig/ucd2Q1eCmh1wKjF0o0uhcOvZLlTIBT9Xfck44g67cSvS+w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-JVJYgT6kj3XJ9aDlCk7madLxd8eGwSjPiIw/+s7pEAdiuGz2Q1X9MkM6h5NpBYBf" crossorigin="anonymous"></script>
+	<!-- Bootstrap JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-Y6bOukab0gBxJxXkC/Yp8AZWpuMNvzMbJCBc5/hnpx8H5Wl/N5ueUlfJJ6UieX6rjrxMqy3qAPaLezsygolJ0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
+    
+{% block main %}
+    <div class="container text-center">
+        <h1 class="mt-5">Orders</h1>
+        {% if orders %}
+            <div class="row row-cols-4">
+                <div class="col col-lg-1 p-2 border bg-warning border-dark text-primary">ID</div>
+                <div class="col col-lg-5 p-2 border bg-warning border-dark text-primary">Product</div>
+                <div class="col col-lg-5 p-2 border bg-warning border-dark text-primary">Shiping address</div>
+                <div class="col col-lg-1 p-2 border bg-warning border-dark text-primary">Quantity</div>
+                {% for order in orders %}
+                    <div class="col col-lg-1 p-2 border bg-light border-dark text-dark">{{order.id}}</div>
+                    <div class="col col-lg-5 p-2 border bg-light border-dark text-dark">{{order.product}}</div>
+                    <div class="col col-lg-5 p-2 border bg-light border-dark text-dark">{{order.shiping_address}}</div>
+                    <div class="col col-lg-1 p-2 border bg-light border-dark text-dark">{{order.quantity}}</div>
+                {% endfor %}
+            </div>
+        {% else %}
+        <p class="mt-5">No orders yet.</p>
+        {% endif %}
+        <div class="mt-5">
+            <a href="{% url 'add_order' %}" class="" ><button type="button" class="btn btn-outline-success">Add product!</button></a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    {{ block.super }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+{% endblock %}
