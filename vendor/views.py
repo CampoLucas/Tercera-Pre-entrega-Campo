@@ -49,3 +49,10 @@ def add_store(request):
         "form": StoreForm(),
     }
     return render(request, "vendor/store_form.html", context)
+
+def search_product(request):
+    criteria = request.GET.get("criteria")
+    context = {
+        'products': Product.objects.filter(name__icontains=criteria).all()
+    }
+    return render(request, "vendor/products.html", context)
