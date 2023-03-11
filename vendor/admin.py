@@ -1,3 +1,6 @@
 from django.contrib import admin
+from vendor.models import Product, Order, Store
 
-# Register your models here.
+admin.register(Product)
+admin.register(Order)
+admin.register(Store)
