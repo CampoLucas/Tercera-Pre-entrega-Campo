@@ -1,0 +1,27 @@
+{% extends "vendor/base.html" %}
+{% load static %}
+
+{% block main %}
+<div class="container mt-5">
+    <h2>Add store</h2>
+    <form action="{% url 'add_order' %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3 mt-3">
+            <label for="{{ form.product.id_for_label }}">{{ form.product.label }}</label>
+            <div>{{ form.product }}</div>
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.quantity.id_for_label }}">{{ form.quantity.label }}</label>
+            <div>{{ form.quantity }}</div>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="{{ form.shiping_address.id_for_label }}">{{ form.shiping_address.label }}</label>
+            <div>{{ form.shiping_address }}</div>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Add">
+    </form>
+    <a href="{% url 'orders' %}" class="justify-content-center"><button type="button" class="btn btn-success mt-3"><- Back to orders</button></a>
+  </div>
+
+
+{% endblock %}

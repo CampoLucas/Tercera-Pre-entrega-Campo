@@ -33,16 +33,18 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                         </li>
+                  
                     </ul>
-                    <form action="" class="d-flex">
-                        <input class="form-control me-2" name="criterio" type="search" placeholder="Product" aria-label="Search">
+                    <form class="d-flex" action="{% url 'search_product' %}">
+                        <input class="form-control me-2" name="criteria" type="search" placeholder="Search product" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
             </div>
         </nav>
+
         {% endblock %}
     </header>
 

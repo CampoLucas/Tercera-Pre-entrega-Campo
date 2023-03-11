@@ -9,10 +9,8 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.PositiveBigIntegerField()
-    store = models.ForeignKey(Store, on_delete=models.CASCADE, related_name='products', blank=True, null=True)
 
 class Order(models.Model):
-    shiping_address = models.TimeField()
-    order_date = models.DateTimeField(auto_now_add=True)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='oredered_product')
+    shiping_address = models.CharField(max_length=255)
+    product = models.CharField(max_length=255)
     quantity = models.PositiveBigIntegerField()
