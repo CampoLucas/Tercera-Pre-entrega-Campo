@@ -112,27 +112,11 @@
     </div>
     <p>El código está organizado de la siguiente manera:</p>
     <ul>
-        <li>admin.py: configuración del sitio de administración de Django.</li>
-        <li>forms.py: formularios de Django para agregar modelos.</li>
-        <li>models.py: modelos de Django para pedidos, productos y tiendas.</li>
-        <li>views.py: vistas de Django para manejar solicitudes y respuestas HTTP.</li>
-        <li>urls.py: enrutamiento de URL de Django para mapear URL a vistas</li>
-    </ul>
-</div>
-
-<div>
-    <div id="user-content-toc">
-        <ul>
-            <summary><h2>Estructura del codigo</h2></summary>
-        </ul>
-    </div>
-    <p>El código está organizado de la siguiente manera:</p>
-    <ul>
-        <li>admin.py: configuración del sitio de administración de Django.</li>
-        <li>forms.py: formularios de Django para agregar modelos.</li>
-        <li>models.py: modelos de Django para pedidos, productos y tiendas.</li>
-        <li>views.py: vistas de Django para manejar solicitudes y respuestas HTTP.</li>
-        <li>urls.py: enrutamiento de URL de Django para mapear URL a vistas</li>
+        <li><strong>admin.py:</strong> configuración del sitio de administración de Django.</li>
+        <li><strong>forms.py:</strong> formularios de Django para agregar modelos.</li>
+        <li><strong>models.py:</strong> modelos de Django para pedidos, productos y tiendas.</li>
+        <li><strong>views.py:</strong> vistas de Django para manejar solicitudes y respuestas HTTP.</li>
+        <li><strong>urls.py:</strong> enrutamiento de URL de Django para mapear URL a vistas</li>
     </ul>
     <p>Las direcciones URL y las vistas de cada función son:</p>
     <ul>
