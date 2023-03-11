@@ -26,5 +26,5 @@ urlpatterns = [
     path('orders/add', add_order, name='add_order'),
     path('stores', show_stores, name='stores'),
     path('stores/add', add_store, name='add_store'),
-    path('product/search', search_product, name='search_product')
+    path('products/search', search_product, name='search_product')
 ]
