@@ -30,7 +30,7 @@
 <h3>Formato</h3>
 <div>
     <ul>
-        <li>ink al repositorio de GitHub con el nombre “Tercera pre-entrega+Apellido”.</li>
+        <p>Link al repositorio de GitHub con el nombre “Tercera pre-entrega+Apellido”.</p>
     </ul>
 </div>
 <hr>
