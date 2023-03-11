@@ -1,18 +1,25 @@
 {% extends "vendor/base.html" %}
 {% load static %}
 
-{% block title %}Home{% endblock %}
 
-{% block bootstrap %}
-    {{ block.super }}
-    
-{% endblock %}
-    
+
 {% block main %}
+<div class="container mt-5">
+    <h2>Add Order</h2>
+    <form action="{% url 'add_store' %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3 mt-3">
+            <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+            <div>{{ form.name }}</div>
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.location.id_for_label }}">{{ form.location.label }}</label>
+            <div>{{ form.location }}</div>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Add">
+    </form>
+    <a href="{% url 'stores' %}" class="justify-content-center"><button type="button" class="btn btn-success mt-3"><- Back to orders</button></a>
+  </div>
 
-{% endblock %}
 
-{% block javascript %}
-    {{ block.super }}
-    
 {% endblock %}
